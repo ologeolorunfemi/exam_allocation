@@ -1,0 +1,29 @@
+<h2>Kogi Poly – Exam Hall Allocation</h2>
+<p>
+  Total Students: {{ students|length }} | Total Capacity: {{ total_capacity }}
+</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <button
+    type="submit"
+    style="
+      padding: 12px 20px;
+      background: #b91c1c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+    "
+  >
+    AUTO-ALLOCATE SEATS NOW
+  </button>
+</form>
+
+<h3>Halls</h3>
+{% for hall in halls %}
+<div>
+  {{ hall.name }} – {{ hall.capacity }} seats -
+  <a href="/exam/hall/{{ hall.id }}/">View Seats</a>
+</div>
+{% endfor %}

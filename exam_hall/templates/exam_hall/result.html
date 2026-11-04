@@ -1,0 +1,23 @@
+<h2>Allocation Complete</h2>
+<table
+  border="1"
+  cellpadding="8"
+  style="border-collapse: collapse; width: 100%"
+>
+  <tr>
+    <th>Mat No</th>
+    <th>Name</th>
+    <th>Dept</th>
+    <th>Hall</th>
+    <th>Seat</th>
+  </tr>
+  {% for a in allocations %}
+  <tr>
+    <td>{{ a.student.mat_no }}</td>
+    <td>{{ a.student.name }}</td>
+    <td>{{ a.student.department }}</td>
+    <td>{{ a.hall.name }}</td>
+    <td>{{ a.seat_no }}</td>
+  </tr>
+  {% endfor %}
+</table>

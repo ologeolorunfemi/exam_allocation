@@ -1,0 +1,1 @@
+web: gunincorn exam_allocation.wsgi
